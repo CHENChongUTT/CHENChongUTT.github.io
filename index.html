@@ -1,10 +1,297 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <mate charest="utf-8" />
-        <title>Hello world!</title>
+        <title>Classement Des Films</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+        	      *{
+                                padding: 0;
+                                margin: 0;
+                                list-style: none;
+			}
+			body{
+				background: linear-gradient(to bottom, #28ff28 0%,#dfffdf 30%,#ffffff 100%);
+/*                                background-image:url(taitan.png);
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;*/
+			}
+			#top{
+				width: 100%;
+				height: 200px;
+				font-size: 100px;
+				text-align: center;
+				line-height: 200px;
+			}
+/*                        #picture{
+                            width:1000px;
+                            height:200px;
+                            margin:0 auto;
+                            background-image:url(caoyuan.jpg);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }*/
+                        #information{
+                                width: 100%;
+                                height:150px;
+                                background: linear-gradient(to left, #ffffff 0%,#ffff6f 50%,#ffffff 100%);
+                        }
+			h1{
+				text-align: center;
+			}
+                        table{
+                            margin: 0 auto;
+                        }
+                        #middle{
+				width: 1000px;
+                                height:730px;
+				margin: 0 auto;
+				border: solid 1px black;
+                                background-color:#ffffff;
+			}
+			#middle-top{/*  width: 100%使一整条变灰*/
+				width: 100%;
+				height: 70px;
+				background-color: #ccc;
+			}
+                        ul li{/* 使li变为一条，单个li长100px，所以总长600px */
+				width: 100px;
+				float: left;
+			}
+			#middle-top-middle{/* width: 600px框住lis使其居中*/
+				margin: 0 auto;
+				width: 600px;
+			}
+                        ul li a{
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				line-height: 28px;
+			}
+                        ul li a:hover{
+				background-color: red;
+			}
+                        .current{
+				background-color: white;
+			}
+                        .cache{
+				display: none;
+			}
+			img{
+				width: 200px;
+				height: 200px;
+			}           
+                        button{
+                            display: block;
+                            margin:0 auto;
+                            
+                        }
+        </style>
     </head>
     <body>
-        <h1>Hello world!</h1>
+        <div id="top">
+            <div id="picture">
+            请投票
+            </div>
+        </div>
+        <div id="middle">
+            <div id="information">
+                <h1>Information d'Utilisateur</h1><br>
+                <table>
+                    <tr>
+                        <td>
+                            Sex:</td><td><input type="radio" name="sex" value="homme">homme
+                            <input type="radio" name="sex" value="femme">femme
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td><td><input type="text" name="age"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="middle-top">
+                <h1>Quel type de film vous voulez voter ?</h1>
+                <div id="middle-top-middle">
+                    <ul>
+                        <li><a href="#">动作片投票</a></li>
+                        <li><a href="#">喜剧片投票</a></li>
+                        <li><a href="#">科幻片投票</a></li>
+                        <li><a href="#">警匪片投票</a></li>
+                        <li><a href="#">记录片投票</a></li>
+                        <li><a href="#">恐怖片投票</a></li>
+                    </ul>
+                </div>
+            </div>
+<!--                    <div id="films">
+                <table>
+                    <tr>
+                        <td id="0"></td><td id="1"></td><td id="2"></td>
+                    </tr>
+                    <tr>
+                        <td id="3"></td><td id="4"></td><td id="5"></td>
+                    </tr>
+                </table>
+            </div>-->
+            <div>
+                <table class="cache" style="border-spacing:10px 20px;">
+                    <tr>
+                        <td>
+                            <img src="action/american_assassin.jpg" alt="01"><br>
+                            <input type="checkbox" name="film_action"><a href="https://www.baidu.com">american assassin</a>
+                        </td>
+                        <td>
+                            <img src="action/american_ultra.jpg" alt="02"><br>
+                            <input type="checkbox" name="film_action">american ultra
+                        </td>
+                        <td>
+                            <img src="action/captain_america.jpg" alt="03"><br>
+                            <input type="checkbox" name="film_action">captain america
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="action/first_blood.jpg" alt="04"><br>
+                            <input type="checkbox" name="film_action">first blood
+                        </td>
+                        <td>
+                            <img src="action/target.jpg" alt="05"><br>
+                            <input type="checkbox" name="film_action">target
+                        </td>
+                        <td>
+                            <img src="action/the_metal_misfit.jpg" alt="06"><br>
+                            <input type="checkbox" name="film_action">the metal misfit
+                        </td>
+                    </tr>
+                </table>
+                <table class="cache" style="border-spacing:10px 20px;">
+                    <tr>
+                        <td>
+                            <img src="comedie/Le_jeu.jpg" alt="01"><br>
+                            <input type="checkbox" name="film_comedie">Le jeu
+                        </td>
+                        <td>
+                            <img src="comedie/a_bras_ouverts.jpg" alt="02"><br>
+                            <input type="checkbox" name="film_comedie">a bras ouverts
+                        </td>
+                        <td>
+                            <img src="comedie/cherchez_la_femme.jpg" alt="03"><br>
+                            <input type="checkbox" name="film_comedie">cherchez la femme
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="comedie/faut_pas_lui_dire.jpg" alt="04"><br>
+                            <input type="checkbox" name="film_comedie">faut pas lui dire
+                        </td>
+                        <td>
+                            <img src="comedie/la_ch'tite_famille.jpg" alt="05"><br>
+                            <input type="checkbox" name="film_comedie">la ch'tite famille
+                        </td>
+                        <td>
+                            <img src="comedie/turf.jpg" alt="06"><br>
+                            <input type="checkbox" name="film_comedie">turf
+                        </td>
+                    </tr>
+                </table>
+                <table class="cache" style="border-spacing:10px 20px;">
+                    <tr>
+                        <td>
+                            <img src="fiction/Harry_Potter.jpg" alt="01"><br>
+                            <input type="checkbox" name="film_fiction">Harry Potter
+                        </td>
+                        <td>
+                            <img src="fiction/Monsters.jpg" alt="02"><br>
+                            <input type="checkbox" name="film_fiction">Monsters
+                        </td>
+                        <td>
+                            <img src="fiction/matrix.jpg" alt="03"><br>
+                            <input type="checkbox" name="film_fiction">matrix
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="fiction/osiris.jpg" alt="04"><br>
+                            <input type="checkbox" name="film_fiction">osiris
+                        </td>
+                        <td>
+                            <img src="fiction/redivider.jpg" alt="05"><br>
+                            <input type="checkbox" name="film_fiction">redivider
+                        </td>
+                        <td>
+                            <img src="fiction/Bright.jpg" alt="06"><br>
+                            <input type="checkbox" name="film_fiction">Bright
+                        </td>
+                    </tr>
+                </table>
+                <table class="cache" style="border-spacing:10px 20px;">
+                    <tr>
+                        <td>
+                            <img src="Police/Beur_Ville.jpg" alt="01"><br>
+                            <input type="checkbox" name="film_police">Beur Ville
+                        </td>
+                        <td>
+                            <img src="Police/Pollice_Academy.jpg" alt="02"><br>
+                            <input type="checkbox" name="film_police">Pollice Academy
+                        </td>
+                        <td>
+                            <img src="Police/Wallpaper_Jokerjpg.jpg" alt="03"><br>
+                            <input type="checkbox" name="film_police">Wallpaper Joker
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="Police/police_story.jpg" alt="04"><br>
+                            <input type="checkbox" name="film_police">police story
+                        </td>
+                        <td>
+                            <img src="Police/team_america.jpg" alt="05"><br>
+                            <input type="checkbox" name="film_police">team america
+                        </td>
+                        <td>
+                            <img src="Police/terrific_hit.jpg" alt="06"><br>
+                            <input type="checkbox" name="film_police">terrific hit
+                        </td>
+                    </tr>
+                </table>
+                <table class="cache" style="border-spacing:10px 20px;">
+                    <tr>
+                        <td>
+                            <img src="documentaire/Home_in_a_foreign_land.jpg" alt="01"><br>
+                            <input type="checkbox" name="film_documentaire">Home in a foreign land
+                        </td>
+                        <td>
+                            <img src="documentaire/apollp_11.jpg" alt="02"><br>
+                            <input type="checkbox" name="film_documentaire">apollp 11
+                        </td>
+                        <td>
+                            <img src="documentaire/march_of_the_penguins.jpg" alt="03"><br>
+                            <input type="checkbox" name="film_documentaire">march of the penguins
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="documentaire/nsel_adam.jpg" alt="04"><br>
+                            <input type="checkbox" name="film_documentaire">nsel adam
+                        </td>
+                        <td>
+                            <img src="documentaire/score.jpg" alt="05"><br>
+                            <input type="checkbox" name="film_documentaire">score
+                        </td>
+                        <td>
+                            <img src="documentaire/waterschool.jpg" alt="06"><br>
+                            <input type="checkbox" name="film_documentaire">waterschool
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="btn"><button id="soumettre" style="width: 85px; height: 40px;">soumettre</button></div>
+        <script src="newjavascript.js"></script>
     </body>
 </html>
